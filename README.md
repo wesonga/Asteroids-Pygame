@@ -21,7 +21,7 @@ A classic Asteroids game built using Pygame. This project replicates the mechani
 
 1. Clone this repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/Asteroids-Pygame.git
+   git clone https://github.com/wesonga/Asteroids-Pygame.git
 
 2. Install the required dependencies:
     ```bash
