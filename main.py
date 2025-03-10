@@ -30,6 +30,10 @@ def main():
 
     # Set up the screen with the given width and height
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    
+    # Load background image
+    background_image = pygame.image.load("images/background.jpg")  # Make sure the image exists in your folder
+    background_image = pygame.transform.scale(background_image, (SCREEN_WIDTH, SCREEN_HEIGHT))  # Scale it to the screen size
 
     # Clock for controlling FPS
     clock = pygame.time.Clock()
@@ -42,7 +46,6 @@ def main():
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
     asteroids = pygame.sprite.Group()  # New group for asteroids
-    shots = pygame.sprite.Group()  # Group for shots
 
     # Add the player to both groups
     updatable.add(player)
@@ -101,7 +104,7 @@ def main():
 
         # Update the flash timer if flash effect is active
         if score_flash:
-            flash_timer += dt
+            flash_timer += dt  
             # print(f"Flash Timer: {flash_timer}")  # Debug print to track timer
             if flash_timer > 0.5:  # After 0.5 seconds, stop flashing
                 score_flash = False
@@ -109,9 +112,9 @@ def main():
         
         # Smooth color interpolation for score
         score_color = interpolate_color(score, high_score + 100, (255, 255, 255), (255, 0, 0))  # From white to red
-    
-        # Fill screen with black
-        screen.fill((0, 0, 0))
+        
+        # Fill screen with black (remove this line, as we will blit the background now)
+        screen.blit(background_image, (0, 0))  # Draw the background image  w
         
         # Draw all objects in the drawable group
         for drawable_obj in drawable:

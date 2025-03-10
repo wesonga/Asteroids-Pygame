@@ -6,10 +6,15 @@ from constants import *
 class Asteroid(CircleShape):
     def __init__(self, x, y, radius):
         super().__init__(x, y, radius)
+        # Set the color for the asteroid
+        self.color = random.choice([(255, 165, 0), (128, 0, 128), (255, 0, 0), (255, 255, 0)])  # Random color
+
+
         self.velocity = pygame.Vector2(random.uniform(-1, 1), random.uniform(-1, 1)) * ASTEROID_SPEED
     
     def draw(self, screen):
-        pygame.draw.circle(screen, (255, 255, 255), (int(self.position.x), int(self.position.y)), self.radius, 2)
+         # Draw the asteroid with the assigned color
+        pygame.draw.circle(screen, self.color, (int(self.position.x), int(self.position.y)), self.radius)
     
     def update(self, dt):
         self.position += self.velocity * dt

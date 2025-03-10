@@ -5,7 +5,7 @@ class Shot(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
         self.image = pygame.Surface((SHOT_RADIUS * 2, SHOT_RADIUS * 2))
-        self.image.fill((255, 0, 0))  # Color for the shot (red)
+        self.image.fill((255, 255, 0))  # Bright yellow color
         self.rect = self.image.get_rect(center=(x, y))
         self.position = pygame.Vector2(x, y)
         self.velocity = pygame.Vector2(0, 0)  # Default velocity (will be set in Player)

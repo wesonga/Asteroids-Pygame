@@ -64,4 +64,6 @@ class Player(CircleShape):
 
     # Draw method override
     def draw(self, screen):
-        pygame.draw.polygon(screen, "white", self.triangle(), 2)
+        # Use cyan (bright blue-green) for the triangle
+        pygame.draw.polygon(screen, (0, 255, 255), self.triangle(), 2)  # Change to cyan
+
