@@ -89,7 +89,7 @@ Before cloning the repository, make sure **git** is installed. To clone the repo
 
 ```bash
 git clone https://github.com/wesonga/Asteroids-Pygame.git
-    ```
+```
 
 ---
 
@@ -98,18 +98,57 @@ Once the repository is cloned, change into the project directory:
 
 ```bash
 cd Asteroids-Pygame
-    ```
+```
 
 ---
 
 ## 4. Set up a virtual environment (recommended to avoid dependency conflicts):
-For Windows:
+### For Windows:
 Create a virtual environment using:
 
 ```bash
 python -m venv venv
+```
 
+### For macOS/Linux
+Create a virtual environment using:
 
+```bash
+python3 -m venv venv
+```
+
+---
+
+## 5. Activate the virtual environment:
+### For Windows:
+Activate the virtual environment with:
+```bash
+venv\Scripts\activate
+```
+
+### For macOS/Linux
+Activate the virtual environment with:
+```bash
+source venv/bin/activate
+```
+
+---
+
+## 6. Install the required dependencies:
+Once the virtual environment is activated, install pygame by running:
+```bash
+pip install pygame
+```
+
+---
+
+## 7. Run the game
+After the dependencies are installed, run the game with:
+```bash
+python3 main.py
+```
+
+---
 
 ## License
 This project is open-source and available under the **[MIT License](LICENSE)**.
