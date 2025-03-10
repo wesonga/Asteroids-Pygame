@@ -13,12 +13,18 @@ class Player(CircleShape):
     def shoot(self):
         # Only shoot if the cooldown is over (shoot_timer is 0)
         if self.shoot_timer <= 0:
-            # Create a new shot at the player's position
-            shot = Shot(self.position.x, self.position.y)
-            # Calculate shot velocity based on player angle and PLAYER_SHOOT_SPEED
-            shot.velocity = pygame.Vector2(0, -1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
+            # Calculate the tip of the triangle (the front)
+            forward = pygame.Vector2(0, 1).rotate(self.rotation)  # Front vector (tip direction)
+            shoot_position = self.position + forward * self.radius  # The bullet will come from the tip of the triangle
+
+            # Create a new shot at the tip of the player
+            shot = Shot(shoot_position.x, shoot_position.y)
+
+            # Calculate shot velocity based on player angle (rotate in the direction player is facing)
+            shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED  # Shoot in the forward direction
             self.shots.add(shot)  # Add the shot to the shots group
             self.shoot_timer = PLAYER_SHOOT_COOLDOWN  # Reset the shoot timer after shooting
+
 
     # Move the player based on delta time (dt)
     def move(self, dt):
