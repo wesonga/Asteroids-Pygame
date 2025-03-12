@@ -40,10 +40,10 @@ A classic Asteroids game built using Pygame. This project replicates the mechani
 
 ### For macOS:
 #### Python 3 (and pip) are usually pre-installed. To check:
-    ```bash
-    python3 --version
-    pip3 --version
-    ```
+```bash
+python3 --version
+pip3 --version
+
 - If missing, install Python 3 using:
     ```bash
     brew install python3
