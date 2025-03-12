@@ -43,6 +43,7 @@ A classic Asteroids game built using Pygame. This project replicates the mechani
 ```bash
 python3 --version
 pip3 --version
+```
 
 - If missing, install Python 3 using:
     ```bash
