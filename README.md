@@ -19,7 +19,7 @@ A classic Asteroids game built using Pygame. This project replicates the mechani
 
 # Installation Instructions
 
-## 1. Ensure Python, pip, and git are installed:
+## 1. Ensure Python3, Pip3, and Git are installed:
 
 ### For Windows:
 #### Python:
@@ -27,8 +27,8 @@ A classic Asteroids game built using Pygame. This project replicates the mechani
 - During installation, make sure to check the box that says "Add Python to PATH".
 - Verify installation by running in **Command Prompt**:
     ```bash
-    python --version
-    pip --version
+    python3 --version
+    pip3 --version
     ```
 
 #### git:
